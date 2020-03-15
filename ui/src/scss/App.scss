@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$purple: #1f0036; // #b84293;
+
+$theme-colors: (
+        primary: $yellow,
+        secondary: $purple,
+        success: $green,
+        info: $blue,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: "Arimo", sans-serif;
+}
+
+.section-bg {
+  background-color: rgba($purple, .1);
+}
+
+.title {
+  border-top: 1px solid $purple;
+  border-bottom: 1px solid $purple;
+}
+
+*[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
+}
+
+.background-tint {
+  background-color: rgba($purple, .3);
+  background-blend-mode: luminosity;
+}
+
+.hero {
+  height: calc(100vh - #{$nav-link-height} - #{$nav-link-padding-y});
+  padding-top: calc(#{$nav-link-height} - #{$nav-link-padding-y});
+  background-image: url('../static/sydney560.jpg');
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero .introduction {
+  background-color: rgba($light, .2);
+}
+
+.wall {
+  height: calc((100vh - #{$nav-link-height} - #{$nav-link-padding-y}) / 2);
+  width: calc((100vw - #{$nav-link-height} - #{$nav-link-padding-y}) / 6);
+  object-fit: cover;
+}
+
+.wall-top {
+  object-position: top;
+}
+
+.wedding-hero {
+  height: calc(100vh - #{$nav-link-height} - #{$nav-link-padding-y});
+  background-image: url('../static/sydney156.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.music-hero {
+  height: calc(100vh - #{$nav-link-height} - #{$nav-link-padding-y});
+  background-image: url('../static/sydney470.jpg');
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-hero {
+  height: calc(100vh - #{$nav-link-height} - #{$nav-link-padding-y});
+  background-image: url('../static/sydney375.jpg');
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-aos="typewriter"] {
+  &.aos-animate {
+    border-right: solid 3px #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 32px;
+    color: #fff;
+    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animated-cursor 600ms steps(29, end) infinite;
+
+    @keyframes animated-text {
+      from {
+        width: 0;
+      }
+      to {
+        width: 235px;
+      }
+    }
+
+    @keyframes animated-cursor {
+      from {
+        border-right-color: #fff;
+      }
+      to {
+        border-right-color: transparent;
+      }
+    }
+  }
+}
+
+.blend-bg {
+  background-color: rgba($purple, .5);
+}
+
+.blend-overlay {
+  mix-blend-mode: luminosity;
+}
