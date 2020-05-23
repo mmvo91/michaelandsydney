@@ -20,12 +20,19 @@ $theme-colors: (
 
 
 html {
+  scroll-padding-top: 75px;
   scroll-behavior: smooth;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@media screen and (max-width:576px) {
+  html {
+    scroll-padding-top: 225px;
   }
 }
 
@@ -40,14 +47,6 @@ body {
 .title {
   border-top: 1px solid $purple;
   border-bottom: 1px solid $purple;
-}
-
-*[id]:before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
 }
 
 .background-tint {
